@@ -1,66 +1,44 @@
-import React, { useLayoutEffect, useState } from 'react';
+import React from 'react';
+import { Footer } from '../layout/Footer';
 import coaches from './coachList.json';
-import Loader from 'react-loader-spinner';
 
 export const CoachesMain = () => {
-	const [loading, setLoading] = useState(true);
-
-	useLayoutEffect(() => {
-		setTimeout(() => {
-			setLoading(false);
-		}, 750);
-		return () => {
-			// cleanup
-		};
-	}, []);
-	if (loading)
-		return (
-			<div className='col-md-3 offset-md-6'>
-				<Loader
-					type='Puff'
-					color='#00BFFF'
-					height={100}
-					width={100}
-					timeout={3000} //3 secs
-				/>
-			</div>
-		);
 	return (
-		<div className='container-fluid coaches-main p-0'>
-			<div className='row m-0'>
-				<div className='col-md-8 offset-md-2 carousel'>
-					<div id='carouselControls' className='carousel slide' data-bs-ride='carousel'>
-						<div className='carousel-inner'>
-							{coaches.map((coach, i) => {
-								return (
-									<div className={`carousel-item ${i === 0 ? 'active' : ''}`}>
-										<img src={coach.URL} className='img-fluid rounded' alt='Gee' />
-										<div className='carousel-caption d-none d-md-block'>
-											<h3 className='carousel-text'>{coach.Coach} </h3>
-											<p className='carousel-text fs-4'>
-												{coach.Coach} has been with us for over {coach.Years} years and specializes in {coach.Specialty}.
-											</p>
+		<div className='coaches-main'>
+			<div className='container p-0'>
+				<div className='row m-0'>
+					<div className='col carousel'>
+						<div id='carouselControls' className='carousel slide' data-bs-ride='carousel'>
+							<div className='carousel-inner'>
+								{coaches.map((coach, i) => {
+									return (
+										<div className={`carousel-item ${i === 0 ? 'active' : ''}`}>
+											<img src={coach.URL} id='coachesImage' className='img-fluid rounded' alt='Gee' />
+											<div className='carousel-caption d-none d-md-block'>
+												<h3 className='carousel-text'>{coach.Coach} </h3>
+												<p className='carousel-text fs-4'>
+													{coach.Coach} has been with us for over {coach.Years} years and specializes in {coach.Specialty}.
+												</p>
+											</div>
 										</div>
-									</div>
-								);
-							})}
+									);
+								})}
+							</div>
 						</div>
+						<button className='carousel-control-prev' type='button' data-bs-target='#carouselControls' data-bs-slide='prev'>
+							<span className='carousel-control-prev-icon' aria-hidden='true'></span>
+							<span className='visually-hidden'>Previous</span>
+						</button>
+						<button className='carousel-control-next' type='button' data-bs-target='#carouselControls' data-bs-slide='next'>
+							<span className='carousel-control-next-icon' aria-hidden='true'></span>
+							<span className='visually-hidden'>Next</span>
+						</button>
 					</div>
-					<button className='carousel-control-prev' type='button' data-bs-target='#carouselControls' data-bs-slide='prev'>
-						<span className='carousel-control-prev-icon' aria-hidden='true'></span>
-						<span className='visually-hidden'>Previous</span>
-					</button>
-					<button className='carousel-control-next' type='button' data-bs-target='#carouselControls' data-bs-slide='next'>
-						<span className='carousel-control-next-icon' aria-hidden='true'></span>
-						<span className='visually-hidden'>Next</span>
-					</button>
 				</div>
-			</div>
-			<div className='container'>
-				<div className='row row-cols-md-2 g-5 mt-5'>
+				<div className='row row-cols-2 g-5 mt-5'>
 					{coaches.map((coach) => {
 						return (
-							<div className='col'>
+							<div className='col pb-5'>
 								<div className='card coach-carder text-center'>
 									<img src={coach.URL} className='card-img-top rounded' height='300px' width='100px' alt={coach.Coach} />
 									<div className='card-body'>
@@ -77,6 +55,7 @@ export const CoachesMain = () => {
 					})}
 				</div>
 			</div>
+            <Footer />
 		</div>
 	);
 };
