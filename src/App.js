@@ -6,7 +6,7 @@ import { Navbar } from './components/layout/Navbar';
 import { CoachesMain } from './components/Coaches/CoachesMain';
 import { MainContextProvider } from './Context/MainContext';
 
-function App() {
+const App = () => {
 	return (
 		<MainContextProvider>
 			<Router>
@@ -18,6 +18,6 @@ function App() {
 			</Router>
 		</MainContextProvider>
 	);
-}
+};
 
 export default App;
