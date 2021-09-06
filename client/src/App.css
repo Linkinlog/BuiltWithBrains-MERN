@@ -75,7 +75,7 @@ div .carousel {
 }
 
 #log-in-btn {
-	background-color: #d00000;
+	background-color: var(--main-bg-color);
 }
 
 .margin-down {
@@ -83,7 +83,7 @@ div .carousel {
 }
 
 #sign-up-btn {
-	background-color: #e85d04;
+	background-color: var(--main-bg-color);
 }
 
 .coach-carder {
