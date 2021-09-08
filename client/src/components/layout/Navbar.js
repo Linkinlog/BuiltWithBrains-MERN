@@ -33,7 +33,7 @@ export const Navbar = () => {
 	}, []);
 	return (
 		<Fragment>
-			<nav id='navbar' ref={navBar} className='navbar fixed-top navbar-expand-xl navbar-dark p-0'>
+			<nav id='navbar' ref={navBar} className='navbar fixed-top navbar-expand-xl navbar-dark p-2'>
 				<div className='container-fluid mb-1'>
 					<a className='navbar-brand' href=' '>
 						<img src='/logo-larger-bg.png' alt='' width='30' height='36' className='d-inline-block me-2' />
@@ -55,8 +55,8 @@ export const Navbar = () => {
 								</Link>
 							</li>
 							<li className='nav-item ms-5'>
-								<Link className='nav-link' to='/training'>
-									Training
+								<Link className='nav-link' to='/overview'>
+									How this works
 								</Link>
 							</li>
 							<li className='nav-item ms-5'>
@@ -65,8 +65,8 @@ export const Navbar = () => {
 								</Link>
 							</li>
 							<li className='nav-item ms-5'>
-								<Link className='nav-link' to='/contact'>
-									Contact Us
+								<Link className='nav-link' to='/about'>
+									About Us
 								</Link>
 							</li>
 						</ul>
