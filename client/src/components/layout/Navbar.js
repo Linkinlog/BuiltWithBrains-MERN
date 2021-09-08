@@ -44,39 +44,39 @@ export const Navbar = () => {
 					</button>
 					<div className='collapse navbar-collapse' ref={collapse} id='navbarNav'>
 						<ul onClick={onCollapse} className='navbar-nav'>
-							<li className='nav-item ms-5'>
+							<li className='nav-item ms-2'>
 								<Link className='nav-link' to='/'>
 									Home
 								</Link>
 							</li>
-							<li className='nav-item ms-5'>
+							<li className='nav-item ms-2'>
 								<Link className='nav-link' to='/coaches'>
 									Coaches
 								</Link>
 							</li>
-							<li className='nav-item ms-5'>
+							<li className='nav-item ms-2'>
 								<Link className='nav-link' to='/overview'>
 									How this works
 								</Link>
 							</li>
-							<li className='nav-item ms-5'>
+							<li className='nav-item ms-2'>
 								<Link className='nav-link' to='/shop'>
 									Shop apparel
 								</Link>
 							</li>
-							<li className='nav-item ms-5'>
+							<li className='nav-item ms-2'>
 								<Link className='nav-link' to='/about'>
 									About Us
 								</Link>
 							</li>
 						</ul>
 						<ul className='navbar-nav ms-auto'>
-							<li className='nav-item ms-5'>
+							<li className='nav-item'>
 								<Link className='btn nav-btn' id='log-in-btn' to=' '>
 									Login
 								</Link>
 							</li>
-							<li className='nav-item ms-5'>
+							<li className={`nav-item if !collapse.current.classList.contains('show') ms-1 `}>
 								<Link className='btn nav-btn' id='sign-up-btn' to=' '>
 									Sign-Up
 								</Link>
