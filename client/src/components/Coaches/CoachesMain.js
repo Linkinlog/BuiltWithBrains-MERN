@@ -4,7 +4,7 @@ import coaches from './coachList.json';
 
 export const CoachesMain = () => {
 	return (
-		<div className='coaches-main'>
+		<div className='coaches-main hotBorder'>
 			<div className='container p-0'>
 				<div className='row m-0'>
 					<div className='col carousel'>
@@ -40,7 +40,7 @@ export const CoachesMain = () => {
 						{coaches.map((coach) => {
 							return (
 								<div className='col pb-5'>
-									<div className='card coach-carder text-center'>
+									<div className='card coach-carder hotBorder text-center'>
 										<img src={coach.URL} className='card-img-top rounded' height='300px' width='100px' alt={coach.Coach} />
 										<div className='card-body'>
 											<p className='card-text'>
