@@ -7,7 +7,7 @@ export const Landing = () => {
 				<div className='row landing-main'>
 					<div className='col-md'>
 						<div className='col-md-6 offset-md-3'>
-							<p className='tag-line text-center'>Get ready to change your life with built with brains!</p>
+							<p className='tag-line text-center'>Get ready to change your life with Built with Brains!</p>
 						</div>
 					</div>
 				</div>
