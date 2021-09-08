@@ -5,6 +5,7 @@ import { Landing } from './components/Landing';
 import { Navbar } from './components/layout/Navbar';
 import { CoachesMain } from './components/Coaches/CoachesMain';
 import { MainContextProvider } from './Context/MainContext';
+import { NotFound } from './components/layout/NotFound';
 
 const App = () => {
 	return (
@@ -14,6 +15,7 @@ const App = () => {
 				<Switch>
 					<Route exact path='/' component={Landing} />
 					<Route exact path='/coaches' component={CoachesMain} />
+					<Route component={NotFound} />
 				</Switch>
 			</Router>
 		</MainContextProvider>
