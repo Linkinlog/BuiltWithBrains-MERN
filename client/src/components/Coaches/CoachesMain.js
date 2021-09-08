@@ -12,8 +12,8 @@ export const CoachesMain = () => {
 							<div className='carousel-inner'>
 								{coaches.map((coach, i) => {
 									return (
-										<div className={`carousel-item ${i === 0 ? 'active' : ''}`}>
-											<img src={coach.URL} id='coachesImage' className='img-fluid rounded' alt='Gee' />
+										<div key={coach.id} className={`carousel-item ${i === 0 ? 'active' : ''}`}>
+											<img src={coach.URL} id='coachesImage' className='img rounded' alt='Gee' />
 											<div className='carousel-caption d-none d-md-block'>
 												<h3 className='carousel-text'>{coach.Coach} </h3>
 												<p className='carousel-text fs-4'>
@@ -35,27 +35,29 @@ export const CoachesMain = () => {
 						</button>
 					</div>
 				</div>
-				<div className='row row-cols-2 g-5 mt-5'>
-					{coaches.map((coach) => {
-						return (
-							<div className='col pb-5'>
-								<div className='card coach-carder text-center'>
-									<img src={coach.URL} className='card-img-top rounded' height='300px' width='100px' alt={coach.Coach} />
-									<div className='card-body'>
-										<p className='card-text'>
-											{coach.Coach} is a specialist in {coach.Specialty}, and they have been with us for over {coach.Years} years we look forward to having you meet us!
-										</p>
-										<a href=' ' className='btn btn-primary'>
-											Schedule with {coach.Coach}
-										</a>
+				<div className='container'>
+					<div className='row row-cols-2 mt-5'>
+						{coaches.map((coach) => {
+							return (
+								<div className='col pb-5'>
+									<div className='card coach-carder text-center'>
+										<img src={coach.URL} className='card-img-top rounded' height='300px' width='100px' alt={coach.Coach} />
+										<div className='card-body'>
+											<p className='card-text'>
+												{coach.Coach} is a specialist in {coach.Specialty}, and they have been with us for over {coach.Years} years we look forward to having you meet us!
+											</p>
+											<a href=' ' className='btn btn-primary'>
+												Schedule with {coach.Coach}
+											</a>
+										</div>
 									</div>
 								</div>
-							</div>
-						);
-					})}
+							);
+						})}
+					</div>
 				</div>
 			</div>
-            <Footer />
+			<Footer />
 		</div>
 	);
 };
