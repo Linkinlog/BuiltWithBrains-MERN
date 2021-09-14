@@ -7,13 +7,11 @@ export const Navbar = () => {
 	const onClick = () => {
 		const navbar = navBar.current;
 		if (window.scrollY <= 600) {
-			console.log(window.scrollY);
 			if (!navbar.classList.contains('bg-main')) navbar.classList.add('bg-main');
 		}
 	};
 
 	const onCollapse = () => {
-		console.log(collapse.current.classList);
 		if (collapse.current.classList.contains('show')) {
 			collapse.current.classList.remove('show');
 		}
@@ -60,12 +58,12 @@ export const Navbar = () => {
 						</ul>
 						<ul className='navbar-nav ms-auto'>
 							<li className='nav-item me-2'>
-								<Link className='btn nav-btn' id='log-in-btn' to=' '>
+								<Link className='btn nav-btn' id='log-in-btn' to='/login'>
 									Login
 								</Link>
 							</li>
 							<li className='nav-item'>
-								<Link className='btn nav-btn' id='sign-up-btn' to=' '>
+								<Link className='btn nav-btn' id='sign-up-btn' to='/register'>
 									Sign-Up
 								</Link>
 							</li>
