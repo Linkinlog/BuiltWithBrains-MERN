@@ -1,9 +1,8 @@
-import React, { Fragment } from 'react';
-import { Footer } from './layout/Footer';
+import React from 'react';
 
 export const Landing = () => {
 	return (
-		<Fragment>
+		<div className='pb-5'>
 				<div className='row landing-main hotBorder'>
 					<div className='col-md'>
 						<div className='col-md-6 offset-md-3'>
@@ -20,12 +19,11 @@ export const Landing = () => {
 					</div>
 				</div>
 				<div className='row'>
-					<div className='col-md-8 offset-md-2 mt-5 p-0'>
+					<div className='col-md-8 offset-md-2 mt-5 px-0'>
 						<h4 className='text-center secondp'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur quae, eaque dolorem minus nostrum voluptate molestiae cupiditate consectetur, facere cum eligendi! Beatae aspernatur, eius in dolor nam nobis nemo nostrum.</h4>
 						<img src='https://images.unsplash.com/photo-1579758629938-03607ccdbaba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1' alt='' className='img-fluid rounded hotBorder mt-4' />
 					</div>
 				</div>
-            <Footer />
-		</Fragment>
+		</div>
 	);
 };
