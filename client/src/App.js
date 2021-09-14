@@ -1,31 +1,36 @@
 import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { Landing } from './components/Landing';
+// Layout components
 import { Navbar } from './components/layout/Navbar';
-import { CoachesMain } from './components/Coaches/CoachesMain';
-import CoachState from './Context/coaches/CoachState';
 import { NotFound } from './components/layout/NotFound';
+// Main components
+import { Landing } from './components/Landing';
+import { CoachesMain } from './components/Coaches/CoachesMain';
 import { Overview } from './components/Overview';
 import { About } from './components/About';
-import { Footer } from './components/layout/Footer';
+import { Register } from './components/auth/Register';
+// Contexts
+import { AuthState } from './Context/auth/AuthState';
+import CoachState from './Context/coaches/CoachState';
+
 const App = () => {
 	return (
-		<CoachState>
-			<Router>
-				<Navbar />
-				<div className='container-fluid'>
+		<AuthState>
+			<CoachState>
+				<Router>
+					<Navbar />
 					<Switch>
 						<Route exact path='/' component={Landing} />
 						<Route exact path='/coaches' component={CoachesMain} />
 						<Route exact path='/overview' component={Overview} />
 						<Route exact path='/about' component={About} />
+						<Route exact path='/register' component={Register} />
 						<Route component={NotFound} />
 					</Switch>
-				</div>
-				<Footer />
-			</Router>
-		</CoachState>
+				</Router>
+			</CoachState>
+		</AuthState>
 	);
 };
 
