@@ -4,10 +4,6 @@
 	--main-dark-color: #00000087;
 }
 
-#root {
-	position: relative;
-}
-
 .hotBorder {
 	box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 	/* box-shadow: blue 0px 0px 0px 2px inset, rgb(255, 255, 255) 10px -10px 0px -3px, rgb(31, 193, 27) 10px -10px, rgb(255, 255, 255) 20px -20px 0px -3px, rgb(255, 217, 19) 20px -20px, rgb(255, 255, 255) 30px -30px 0px -3px, rgb(255, 156, 85) 30px -30px, rgb(255, 255, 255) 40px -40px 0px -3px, rgb(255, 85, 85) 40px -40px; */
@@ -45,7 +41,7 @@ body {
 }
 
 div .carousel {
-	margin-top: 5em;
+	margin-top: 3em;
 }
 
 #coachesImage {
@@ -106,6 +102,24 @@ div .carousel {
 	width: 100vw;
 }
 
+.about {
+	margin-top: 7.5rem;
+	margin-bottom: 5rem;
+	min-height: 85vh;
+	color: var(--main-bg-color);
+
+}
+
+.overview {
+	margin-top: 7.5rem;
+	margin-bottom: 5rem;
+	min-height: 85vh; 
+}
+
+.overview-text {
+	color: var(--main-bg-color);
+}
+
 .landing-main {
 	background-image: url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1');
 	background-repeat: no-repeat;
@@ -121,6 +135,15 @@ div .carousel {
 	background-size: cover;
 	background-position: center;
 	height: 80vh;
+	width: 100vw;
+}
+
+.register {
+	background-image: url('https://images.unsplash.com/photo-1631261177958-b68a44d92a56?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	height: 100vh;
 	width: 100vw;
 }
 
@@ -171,14 +194,7 @@ div .carousel {
 	background-color: var(--main-bg-color);
 }
 
-.carousel {
-	margin-top: 3%;
-}
-
 @media only screen and (max-width: 768px) {
-	.carousel {
-		margin-top: 15%;
-	}
 	.tag-line {
 		font-size: 3rem;
 		padding: 50% 0 25% 0;
