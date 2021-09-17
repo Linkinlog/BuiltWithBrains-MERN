@@ -14,6 +14,9 @@ const CoachSchema = Schema({
 		type: String,
 		required: false
 	},
+	role : {
+		type: String
+	},
 	years : {
 		type: Number,
 		required: false
