@@ -1,8 +1,16 @@
-import React, { Fragment, useRef } from 'react';
+import React, { Fragment, useContext, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Context/auth/authContext';
 export const Navbar = () => {
+	const authContext = useContext(AuthContext);
+	const { isAuthenticated, loadUser, user } = authContext;
 	const navBar = useRef(null);
 	const collapse = useRef();
+
+	useEffect(() => {
+		loadUser();
+		// eslint-disable-next-line
+	}, [isAuthenticated]);
 
 	const onClick = () => {
 		const navbar = navBar.current;
@@ -56,18 +64,28 @@ export const Navbar = () => {
 								</Link>
 							</li>
 						</ul>
-						<ul className='navbar-nav ms-auto'>
-							<li className='nav-item me-2'>
-								<Link className='btn nav-btn' id='log-in-btn' to='/login'>
-									Login
-								</Link>
-							</li>
-							<li className='nav-item'>
-								<Link className='btn nav-btn' id='sign-up-btn' to='/register'>
-									Sign-Up
-								</Link>
-							</li>
-						</ul>
+						{!isAuthenticated ? (
+							<ul className='navbar-nav ms-auto'>
+								<li className='nav-item me-2'>
+									<Link className='btn nav-btn' id='log-in-btn' to='/login'>
+										Login
+									</Link>
+								</li>
+								<li className='nav-item'>
+									<Link className='btn nav-btn' id='sign-up-btn' to='/register'>
+										Sign-Up
+									</Link>
+								</li>
+							</ul>
+						) : (
+							<ul className='navbar-nav ms-auto'>
+								<li className='nav-item me-2'>
+									<Link className='btn nav-btn' id='log-in-btn' to='/logout'>
+										Logout ({user && user.username.charAt(0).toUpperCase() + user.username.slice(1)})
+									</Link>
+								</li>
+							</ul>
+						)}
 					</div>
 				</div>
 			</nav>
