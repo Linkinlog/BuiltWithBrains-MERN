@@ -6,20 +6,22 @@ const bcrypt = require('bcryptjs');
 const auth = require('../../middleware/auth');
 const User = require('../../models/User');
 const config = require('config')
-// @GET '/'
+
+
+// @GET '/login'
 // Get logged in user
 // Private
 router.get('/', auth, async (req, res, next) => {
 	try {
 		const user = await User.findById(req.user.id).select('-password');
-		res.json(user);
+		return res.json(user);
 	} catch (error) {
 		console.error(error.message);
-		res.status(500).send('Server error');
+		return res.status(500).send('Server error');
 	}
 });
 
-// @POST '/'
+// @POST '/login'
 // Log in user
 // Public
 router.post('/', [check('username', 'Username is required').exists(), check('password', 'password is required').exists()], async (req, res) => {
@@ -59,10 +61,10 @@ router.post('/', [check('username', 'Username is required').exists(), check('pas
 	}
 });
 
-// @POST '/register'
+// @POST '/login/register'
 // Register a new user
 // Public
-router.post('/register', [check('username', 'Please enter a valid username').not().isEmpty(), check('password', 'Please enter a password with 6 or more characters').isLength({ min: 6 })], async (req, res) => {
+router.post('/register', [check('username', 'Please enter a valid username').not().isEmpty(), check('password', 'Please enter a password').not().isEmpty()], async (req, res) => {
 	const errors = validationResult(req);
 	if (!errors.isEmpty()) {
 		return res.status(400).json({ errors: errors.array() });
@@ -74,7 +76,7 @@ router.post('/register', [check('username', 'Please enter a valid username').not
 		let user = await User.findOne({ username });
 
 		if (user) {
-			res.status(400).json({ msg: 'User already exists' });
+			return res.status(400).json({ msg: 'User already exists' });
 		}
 
 		user = new User({
@@ -100,12 +102,12 @@ router.post('/register', [check('username', 'Please enter a valid username').not
 			},
 			(err, token) => {
 				if (err) throw err;
-				res.json({ token });
+				return res.json({ token });
 			}
 		);
 	} catch (error) {
 		console.log(error.message);
-		res.status(500).send('Server error');
+		return res.status(500).send('Server error');
 	}
 });
 
