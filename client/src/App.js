@@ -9,6 +9,7 @@ import { Landing } from './components/Landing';
 import { CoachesMain } from './components/Coaches/CoachesMain';
 import { Overview } from './components/Overview';
 import { About } from './components/About';
+import { Store } from './components/Store';
 import { Register } from './components/auth/Register';
 import { Login } from './components/auth/Login';
 import { Logout } from './components/auth/Logout';
@@ -23,6 +24,7 @@ if (localStorage.token) {
 	setAuthToken(localStorage.token);
 }
 const App = () => {
+
 	return (
 		<AuthState>
 			<CoachState>
@@ -37,6 +39,7 @@ const App = () => {
 							<Route exact path='/register' component={Register} />
 							<Route exact path='/login' component={Login} />
 							<Route exact path='/logout' component={Logout} />
+							<Route exact path='/shop' component={Store} />
 							<Route component={NotFound} />
 						</Switch>
 					</Router>
