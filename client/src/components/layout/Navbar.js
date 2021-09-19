@@ -65,7 +65,7 @@ export const Navbar = () => {
 							</li>
 						</ul>
 						{!isAuthenticated ? (
-							<ul className='navbar-nav ms-auto'>
+							<ul onClick={onCollapse} className='navbar-nav ms-auto'>
 								<li className='nav-item me-2'>
 									<Link className='btn nav-btn' id='log-in-btn' to='/login'>
 										Login
@@ -78,7 +78,7 @@ export const Navbar = () => {
 								</li>
 							</ul>
 						) : (
-							<ul className='navbar-nav ms-auto'>
+							<ul onClick={onCollapse} className='navbar-nav ms-auto'>
 								<li className='nav-item me-2'>
 									<Link className='btn nav-btn' id='log-in-btn' to='/logout'>
 										Logout ({user && user.username.charAt(0).toUpperCase() + user.username.slice(1)})
