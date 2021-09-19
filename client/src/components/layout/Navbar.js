@@ -67,7 +67,7 @@ export const Navbar = () => {
 						{!isAuthenticated ? (
 							<ul onClick={onCollapse} className='navbar-nav ms-auto'>
 								<li className='nav-item me-2'>
-									<Link className='btn nav-btn' id='log-in-btn' to='/login'>
+									<Link className='btn nav-btn' id='log-in-btn' to='/signin'>
 										Login
 									</Link>
 								</li>
