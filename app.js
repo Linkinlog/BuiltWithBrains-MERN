@@ -25,8 +25,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/coaches', coachesRouter);
-app.use('/login', loginRouter);
+app.use('/api/coaches', coachesRouter);
+app.use('/api/login', loginRouter);
 
 if(process.env.NODE_ENV === 'production'){
   app.use(express.static('client/build'))

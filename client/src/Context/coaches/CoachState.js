@@ -14,7 +14,7 @@ const CoachState = (props) => {
 
 	// Update coaches
 	const updateCoaches = () => {
-		return axios.get('/coaches/').then((res) => {
+		return axios.get('/api/coaches/').then((res) => {
 			dispatch({
 				type: UPDATE_COACHES,
 				payload: res.data,

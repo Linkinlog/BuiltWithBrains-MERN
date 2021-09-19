@@ -8,7 +8,7 @@ const User = require('../../models/User');
 const config = require('config')
 
 
-// @GET '/login'
+// @GET '/api/login'
 // Get logged in user
 // Private
 router.get('/', auth, async (req, res, next) => {
@@ -21,7 +21,7 @@ router.get('/', auth, async (req, res, next) => {
 	}
 });
 
-// @POST '/login'
+// @POST '/api/login'
 // Log in user
 // Public
 router.post('/', [check('username', 'Username is required').exists(), check('password', 'password is required').exists()], async (req, res) => {
@@ -61,7 +61,7 @@ router.post('/', [check('username', 'Username is required').exists(), check('pas
 	}
 });
 
-// @POST '/login/register'
+// @POST '/api/login/register'
 // Register a new user
 // Public
 router.post('/register', [check('username', 'Please enter a valid username').not().isEmpty(), check('password', 'Please enter a password').not().isEmpty()], async (req, res) => {

@@ -17,7 +17,7 @@ export const AuthState = (props) => {
 	const loadUser = async () => {
 		setAuthToken(localStorage.token);
 		try {
-			const res = await axios.get('/login');
+			const res = await axios.get('/api/login');
 			dispatch({
 				type: USER_LOADED,
 				payload: res.data,
@@ -36,7 +36,7 @@ export const AuthState = (props) => {
 		};
 		try {
 			user.username = user.username.toLowerCase();
-			const res = await axios.post('/login/register', user, config);
+			const res = await axios.post('/api/login/register', user, config);
 			dispatch({
 				type: REGISTER_SUCCESS,
 				payload: res.data,
@@ -67,7 +67,7 @@ export const AuthState = (props) => {
 		};
 		try {
 			user.username = user.username.toLowerCase();
-			const res = await axios.post('/login', user, config);
+			const res = await axios.post('/api/login', user, config);
 			dispatch({
 				type: LOGIN_SUCCESS,
 				payload: res.data,
