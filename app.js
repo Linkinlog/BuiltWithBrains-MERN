@@ -17,7 +17,7 @@ app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use((req, res, next) => {
-  console.log(req.ip)
+  console.log(req.headers["x-real-ip"])
   next();
 })
 app.use(express.json());
