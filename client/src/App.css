@@ -6,21 +6,6 @@
 
 .hotBorder {
 	box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-	/* box-shadow: blue 0px 0px 0px 2px inset, rgb(255, 255, 255) 10px -10px 0px -3px, rgb(31, 193, 27) 10px -10px, rgb(255, 255, 255) 20px -20px 0px -3px, rgb(255, 217, 19) 20px -20px, rgb(255, 255, 255) 30px -30px 0px -3px, rgb(255, 156, 85) 30px -30px, rgb(255, 255, 255) 40px -40px 0px -3px, rgb(255, 85, 85) 40px -40px; */
-	/* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; */
-}
-
-.footer {
-	border-top: 2px solid rgba(160, 159, 159, 0.296);
-	width: 100%;
-	bottom: 0;
-	color: darkgrey;
-	font-size: 1rem;
-}
-
-.footer p {
-	margin-bottom: 0;
-	padding-left: 1rem;
 }
 
 .content-wrap {
@@ -54,7 +39,6 @@ div .carousel {
 	transition: text-decoration-color 300ms;
 	color: white !important;
 }
-
 
 .nav-link:hover {
 	text-decoration-color: var(--main-bright-color);
@@ -116,13 +100,12 @@ div .carousel {
 	margin-bottom: 5rem;
 	min-height: 85vh;
 	color: var(--main-bg-color);
-
 }
 
 .overview {
 	margin-top: 7.5rem;
 	margin-bottom: 5rem;
-	min-height: 85vh; 
+	min-height: 85vh;
 }
 
 .overview-text {
@@ -229,120 +212,3 @@ div .carousel {
 	height: 20vh;
 }
 
-/* Spinner */
-/* KEYFRAMES */
-
-@keyframes spin {
-	from {
-		transform: rotate(0);
-	}
-	to {
-		transform: rotate(359deg);
-	}
-}
-
-@keyframes spin3D {
-	from {
-		transform: rotate3d(0.5, 0.5, 0.5, 360deg);
-	}
-	to {
-		transform: rotate3d(0deg);
-	}
-}
-
-@keyframes configure-clockwise {
-	0% {
-		transform: rotate(0);
-	}
-	25% {
-		transform: rotate(90deg);
-	}
-	50% {
-		transform: rotate(180deg);
-	}
-	75% {
-		transform: rotate(270deg);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
-}
-
-@keyframes configure-xclockwise {
-	0% {
-		transform: rotate(45deg);
-	}
-	25% {
-		transform: rotate(-45deg);
-	}
-	50% {
-		transform: rotate(-135deg);
-	}
-	75% {
-		transform: rotate(-225deg);
-	}
-	100% {
-		transform: rotate(-315deg);
-	}
-}
-
-@keyframes pulse {
-	from {
-		opacity: 1;
-		transform: scale(1);
-	}
-	to {
-		opacity: 0.25;
-		transform: scale(0.75);
-	}
-}
-
-/* GRID STYLING */
-
-* {
-	box-sizing: border-box;
-}
-#spinner {
-	height: 100vh;
-	width: 100%;
-	margin-top: 10%;
-}
-
-.spinner-box {
-	width: 100%;
-	height: 300px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: transparent;
-}
-.configure-border-1 {
-	width: 115px;
-	height: 115px;
-	padding: 3px;
-	position: absolute;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background: #fb5b53;
-	animation: configure-clockwise 2s ease-out 0s infinite alternate;
-}
-
-.configure-border-2 {
-	width: 115px;
-	height: 115px;
-	padding: 3px;
-	left: -115px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background: rgb(63, 249, 220);
-	transform: rotate(45deg);
-	animation: configure-xclockwise 2s ease-in-out 0s infinite alternate;
-}
-
-.configure-core {
-	width: 100%;
-	height: 100%;
-	background-color: #1d2630;
-}
