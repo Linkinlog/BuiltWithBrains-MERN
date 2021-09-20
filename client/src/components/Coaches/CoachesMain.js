@@ -17,7 +17,13 @@ export const CoachesMain = () => {
 	return (
 		<Fragment>
 			{loading ? (
-				<Loader type='Puff' color='#00BFFF' height={200} width={200} timeout={3000} />
+				<div className='container-fluid coaches-main hotBorder pt-5'>
+					<div className='col-md-3 offset-md-5 pt-5'>
+						<div className='container pt-5'>
+							<Loader type='Puff' color='#00BFFF' height={200} width={200}  timeout={3000}/>
+						</div>
+					</div>
+				</div>
 			) : (
 				<div className='coaches-main hotBorder'>
 					<div className='row mx-0'>
@@ -27,7 +33,7 @@ export const CoachesMain = () => {
 									{coaches.map((coach, i) => {
 										return (
 											<div key={uuidv4()} className={`carousel-item ${i === 0 ? 'active' : ''}`}>
-												<img src={coach.URL} id='coachesImage' className='img rounded' alt='Gee' />
+												<img src={coach.URL} id='coachesImage' className='img img-fluid rounded rounded-3' alt={coach.name} />
 												<div className='carousel-caption d-none d-md-block'>
 													<h3 className='carousel-text'>{coach.name} </h3>
 													<p className='carousel-text fs-4'>
@@ -52,7 +58,7 @@ export const CoachesMain = () => {
 					<div className='container'>
 						<div className='row row-cols-2 mt-5'>
 							{coaches.map((coach) => (
-								<CoachCard {...coach} />
+								<CoachCard {...coach} key={coach._id}/>
 							))}
 						</div>
 					</div>
