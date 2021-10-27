@@ -49,11 +49,6 @@ export const Navbar = () => {
 								</Link>
 							</li>
 							<li className='nav-item ms-2'>
-								<Link className='nav-link' to='/overview'>
-									How this works
-								</Link>
-							</li>
-							<li className='nav-item ms-2'>
 								<Link className='nav-link' to='/shop'>
 									Shop apparel
 								</Link>
