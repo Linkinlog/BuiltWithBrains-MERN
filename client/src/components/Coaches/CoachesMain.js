@@ -33,7 +33,7 @@ export const CoachesMain = () => {
 									{coaches.map((coach, i) => {
 										return (
 											<div key={uuidv4()} className={`carousel-item ${i === 0 ? 'active' : ''}`}>
-												<img src={coach.carouselPicture} id='coachesImage' className='img img-fluid rounded rounded-3' alt={coach.name} />
+												<img src={window.matchMedia("(max-width: 768px)").matches ? coach.mainPicture : coach.carouselPicture} id='coachesImage' className='img img-fluid rounded rounded-3' alt={coach.name} />
 												<div className='carousel-caption d-none d-md-block'>
 													<h3 className='carousel-text'>{coach.name} </h3>
 													<p className='carousel-text fs-4'>
